@@ -1,0 +1,36 @@
+server:
+  port: 8182
+  servlet:
+    context-path: /credit
+    
+spring:
+  application:
+    name: creditscore-service 
+    
+  datasource:
+    
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: loan
+    password: rahul123 
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true 
+    
+management:
+ endpoints:
+  web:
+    exposure:
+      include : "*"
+      # - health
+  
+    
+ #Register with eureka server 
+ 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone : http://localhost:8761/eureka/
+      
+     
+      
